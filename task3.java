@@ -15,7 +15,6 @@ public class task3 {
     
            return exp;
     }
-    // Реализовать простой калькулятор
     public static int calculator(String ex){
         String exp = addSpaces(ex);
         List<Integer> nums = new ArrayList<>();
@@ -37,7 +36,10 @@ public class task3 {
             res = nums.get(0) * nums.get(1);
         }else if(exp.contains("/") == true){
             res = nums.get(0) / nums.get(1);
-        }else{
+        }else if(exp.contains("^") == true){
+            res = (int) Math.pow(nums.get(0),nums.get(1));
+        }
+        else{
             System.out.println("Такой операции нет или возможно Вы неверно ввели выражение, выражение должно быть в формате 8 + 6");
         }
         return res;
